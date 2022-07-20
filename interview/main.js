@@ -84,20 +84,20 @@ then we add 1 to the total number
 then we create the array again
 */
 
-const plusOne = function (digits) {
-  for (let i = digits.length - 1; i >= 0; i--) {
-    digits[i]++;
-    if (digits[i] > 9) {
-      digits[i] = 0;
-    } else {
-      return digits;
-    }
-  }
-  digits.unshift(1);
-  return digits;
-};
+// const plusOne = function (digits) {
+//   for (let i = digits.length - 1; i >= 0; i--) {
+//     digits[i]++;
+//     if (digits[i] > 9) {
+//       digits[i] = 0;
+//     } else {
+//       return digits;
+//     }
+//   }
+//   digits.unshift(1);
+//   return digits;
+// };
 
-console.log(plusOne([6, 1, 4, 5, 3, 9, 0, 1, 9, 5, 1, 8, 6, 7, 0, 5, 5, 4, 3]));
+// console.log(plusOne([6, 1, 4, 5, 3, 9, 0, 1, 9, 5, 1, 8, 6, 7, 0, 5, 5, 4, 3]));
 
 /*
 we have an array of numbers [3,2,2,3] and we are giving a value 3
@@ -105,26 +105,26 @@ we need to filter out the array and remove value number from the array
 then replace it with underscore
 */
 
-const removeElement = function (nums, val) {
-  let count = 0;
-  for (let i = 0; i < nums.length; i++) {
-    if (nums[i] !== val) {
-      nums[count++] = nums[i];
-    }
-  }
-  return count;
-};
+// const removeElement = function (nums, val) {
+//   let count = 0;
+//   for (let i = 0; i < nums.length; i++) {
+//     if (nums[i] !== val) {
+//       nums[count++] = nums[i];
+//     }
+//   }
+//   return count;
+// };
 
-console.log(removeElement([3, 2, 2, 3], 3));
+// console.log(removeElement([3, 2, 2, 3], 3));
 
-const removeElement = function (nums, val) {
-  for (let i = 0; i < nums.length; i++) {
-    if (nums[i] === val) {
-      nums.splice(i, 1);
-        i--
-    }
-  }
-};
+// const removeElement = function (nums, val) {
+//   for (let i = 0; i < nums.length; i++) {
+//     if (nums[i] === val) {
+//       nums.splice(i, 1);
+//         i--
+//     }
+//   }
+// };
 
 /*
 firs we need to check if a string is palindrome
@@ -139,73 +139,73 @@ then save that array
 8- i need to filter out anything that is not a character from the array
 */
 
-const isPalindrome = function (s) {
-  const regex = /[\W_]/g;
-  const lowerCased = s.toLowerCase().replace(regex, '');
-  const backward = lowerCased.split('').reverse().join('');
-  if (lowerCased === backward) {
-    return true;
-  } else {
-    return false;
-  }
-};
+// const isPalindrome = function (s) {
+//   const regex = /[\W_]/g;
+//   const lowerCased = s.toLowerCase().replace(regex, '');
+//   const backward = lowerCased.split('').reverse().join('');
+//   if (lowerCased === backward) {
+//     return true;
+//   } else {
+//     return false;
+//   }
+// };
 
-console.log(isPalindrome('A man, a plan, a canal: Panama'));
+// console.log(isPalindrome('A man, a plan, a canal: Panama'));
 
-function solution(inputArray) {
-  const multipliedArrayNumbers = [];
-  let result = null;
-  for (let i = 0; i < inputArray.length - 1; i++) {
-    multipliedArrayNumbers.push(inputArray[i] * inputArray[i + 1]);
-  }
-  result = Math.max(...multipliedArrayNumbers);
-  return result;
-}
+// function solution(inputArray) {
+//   const multipliedArrayNumbers = [];
+//   let result = null;
+//   for (let i = 0; i < inputArray.length - 1; i++) {
+//     multipliedArrayNumbers.push(inputArray[i] * inputArray[i + 1]);
+//   }
+//   result = Math.max(...multipliedArrayNumbers);
+//   return result;
+// }
 
-console.log(solution([3, 6, -2, -5, 7, 3]));
+// console.log(solution([3, 6, -2, -5, 7, 3]));
 
-function findDifferenceValue(firstString, secondString) {
-  const index = [];
-  const secondIndex = [];
-  let output = 0;
-  if (secondString === 'ABA') {
-    return 0;
-  }
+// function findDifferenceValue(firstString, secondString) {
+//   const index = [];
+//   const secondIndex = [];
+//   let output = 0;
+//   if (secondString === 'ABA') {
+//     return 0;
+//   }
 
-  for (let i = 0; i < firstString.length - 1; i++) {
-    if (firstString[i] !== secondString[j]) {
-      index.push(i + 1);
-    }
-  }
+//   for (let i = 0; i < firstString.length - 1; i++) {
+//     if (firstString[i] !== secondString[j]) {
+//       index.push(i + 1);
+//     }
+//   }
 
-  if (index.length === 0) {
-    output = secondIndex[0] - secondIndex[secondIndex.length - 1] + 1;
-  } else {
-    output = index[0] - index[index.length - 1] + 1;
-  }
-  return output;
-}
+//   if (index.length === 0) {
+//     output = secondIndex[0] - secondIndex[secondIndex.length - 1] + 1;
+//   } else {
+//     output = index[0] - index[index.length - 1] + 1;
+//   }
+//   return output;
+// }
 
-console.log(findDifferenceValue('ABA', 'ABACCA'));
+// console.log(findDifferenceValue('ABA', 'ABACCA'));
 
-finding the first non-repeated character in a string;
-var firstUniqChar = function (s) {
-  const result = {};
-  for (let i = 0; i < s.length; i++) {
-    if (!result[s[i]]) {
-      result[s[i]] = 1;
-    } else {
-      result[s[i]]++;
-    }
-    console.log(result);
-  }
-  for (const key in result) {
-    if (result[key] === 1) {
-      return s.indexOf(key);
-    }
-  }
-  return -1;
-};
+// finding the first non-repeated character in a string;
+// var firstUniqChar = function (s) {
+//   const result = {};
+//   for (let i = 0; i < s.length; i++) {
+//     if (!result[s[i]]) {
+//       result[s[i]] = 1;
+//     } else {
+//       result[s[i]]++;
+//     }
+//     console.log(result);
+//   }
+//   for (const key in result) {
+//     if (result[key] === 1) {
+//       return s.indexOf(key);
+//     }
+//   }
+//   return -1;
+// };
 
 // console.log(firstUniqChar('loveleetcode'));
 
@@ -223,44 +223,70 @@ after that we increment the index by 1
 lastly we return the tracker
 */
 
-function solution(statues) {
-  const sortedArray = statues.sort((a, b) => a - b);
-  let tracker = 0;
-  let index = sortedArray[0];
-  for (let i = 0; i < sortedArray.length; i++) {
-    if (sortedArray[i] !== index) {
-      statues.push(index);
-      sortedArray.sort((a, b) => a - b);
-      tracker++;
-    }
-    index++;
-  }
-  return tracker;
-}
+// function solution(statues) {
+//   const sortedArray = statues.sort((a, b) => a - b);
+//   let tracker = 0;
+//   let index = sortedArray[0];
+//   for (let i = 0; i < sortedArray.length; i++) {
+//     if (sortedArray[i] !== index) {
+//       statues.push(index);
+//       sortedArray.sort((a, b) => a - b);
+//       tracker++;
+//     }
+//     index++;
+//   }
+//   return tracker;
+// }
 
-console.log(solution([6, 2, 3, 8]));
+// console.log(solution([6, 2, 3, 8]));
 
-const romanToInt = function (s) {
-  const symbals = {
-    M: 1000,
-    D: 500,
-    C: 100,
-    L: 50,
-    X: 10,
-    V: 5,
-    I: 1
-  };
-  let numbers = 0;
+// const romanToInt = function (s) {
+//   const symbals = {
+//     M: 1000,
+//     D: 500,
+//     C: 100,
+//     L: 50,
+//     X: 10,
+//     V: 5,
+//     I: 1
+//   };
+//   let numbers = 0;
 
-  for (let i = 0; i < s.length; i++) {
-    const currentNumber = symbals[s[i]];
-    const nextNumber = symbals[s[i + 1]];
-    if (currentNumber < nextNumber) {
-      numbers += nextNumber - currentNumber;
-      i++;
-    } else {
-      numbers += symbals[s[i]];
-    }
-  }
-  return numbers;
-};
+//   for (let i = 0; i < s.length; i++) {
+//     const currentNumber = symbals[s[i]];
+//     const nextNumber = symbals[s[i + 1]];
+//     if (currentNumber < nextNumber) {
+//       numbers += nextNumber - currentNumber;
+//       i++;
+//     } else {
+//       numbers += symbals[s[i]];
+//     }
+//   }
+//   return numbers;
+// };
+
+/* so first we need to check if the numbers in the array are strictly increasing
+
+what we need to do is re order the array from smallest to largest number
+then we check if the number is equal to the tracker if it is then we return false if not then we
+keep looping
+then we check if the number is not equal to the tracker and then we return false if thats the case
+*/
+
+// function solution(sequence) {
+//   let invalidItemCount = 0;
+//   for (let i = 0; i < sequence.length; i++) {
+//     if (sequence[i] <= sequence[i - 1]) {
+//       invalidItemCount++;
+//     }
+//     if (invalidItemCount > 1) {
+//       return false;
+//     }
+//     if (sequence[i] <= sequence[i - 2] && sequence[i + 1] <= sequence[i - 1]) {
+//       return false;
+//     }
+//   }
+//   return true;
+// }
+
+// console.log(solution([1, 3, 2, 1]));
