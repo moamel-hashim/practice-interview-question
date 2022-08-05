@@ -290,3 +290,22 @@ then we check if the number is not equal to the tracker and then we return false
 // }
 
 // console.log(solution([1, 3, 2, 1]));
+
+/*
+
+we are giving a string and then we want to check if the needle has an indexOf
+so we want to check the indexOf needle and if its not in the string then we return -1
+
+we create function that takes in a string and the second parameter is going to be a substring
+then we check if the substring has indexOf in the string if it doesnt then we return -1 if it does then we return the index
+
+function (haystack, needle) {
+  return haystack.indexOf(needle);
+}
+*/
+
+// const strStr = function (haystack, needle) {
+//   return haystack.indexOf(needle);
+// };
+
+// console.log(strStr('hello', 'll'));
