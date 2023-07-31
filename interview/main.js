@@ -309,3 +309,131 @@ function (haystack, needle) {
 // };
 
 // console.log(strStr('hello', 'll'));
+
+// const mySqrt = function (x) {
+//   const valueOfSqrtNumber = Math.sqrt(x);
+//   return Math.trunc(valueOfSqrtNumber);
+// };
+
+// console.log(mySqrt(8));
+
+/* okay so we got a stairs the length of the stairs is n
+
+we need to figure out what are the different ways of climbing the stairs
+we can either climb 1 step at a time or clime 2 steps at a time
+if the stairs length is 2. to reach the top we need there is two different ways
+of climbing it either we take 2 steps at once or we take one step + one step
+*/
+
+// const hashmap = new Map();
+// hashmap.set(1, 1);
+// hashmap.set(2, 2);
+
+// const climbStairs = function (n) {
+//   const result = hashmap.get(n);
+//   if (result !== undefined) {
+//     return result;
+//   }
+//   const left = climbStairs(n - 2);
+//   const right = climbStairs(n - 1);
+//   hashmap.set(n - 2, left);
+//   hashmap.set(n - 1, right);
+//   return left + right;
+// };
+
+// console.log(climbStairs(7));
+
+/*
+
+so we are giving an array with numbers we need to
+store the numbers in an object. we need to check ]
+how many times the numbers is repeated by adding the array
+numbers to the object as keys then for each key we give it a value
+and that value is incremented based on how many times that number is
+repeated.
+
+const object = {};
+
+for(let i = 0; i < nums.length; i++) {
+  if(!object[nums[i]]) {
+    object[nums[i]] = 1;
+  } else {
+    object[nums[i]]++;
+  }
+}
+
+for(keys in object) {
+  if( object[keys] === 1) {
+    return keys
+  }
+}
+*/
+
+// const singleNumber = function (nums) {
+//   const object = {};
+//   for (let i = 0; i < nums.length; i++) {
+//     if (!object[nums[i]]) {
+//       object[nums[i]] = 1;
+//     } else {
+//       object[nums[i]]++;
+//     }
+//   }
+//   for (const keys in object) {
+//     if (object[keys] === 1) {
+//       return keys;
+//     }
+//   }
+// };
+
+// console.log(singleNumber([2, 2, 1]));
+
+/*
+
+we need to create a variable that keeps track of the min
+price. then we need to figure out the min price
+then we loop over the array
+once we loop over the array we want to assign
+the lowest value to the variable that we created and
+store it in there.
+after we store the value max number - min
+lastely we want to return the profit
+*/
+
+// const maxProfit = function (prices) {
+//   let profit = 0;
+//   let min = prices[0];
+//   for (let i = 1; i < prices.length; i++) {
+//     min = Math.min(min, prices[i - 1]);
+//     profit = Math.max(prices[i] - min, profit);
+//   }
+//   return profit;
+// };
+
+// console.log(maxProfit([7, 1, 5, 3, 6, 4]));
+
+/*
+
+we want to create an object then we loop over the array
+- we check if the object at nums at i is falsie if it is then we
+create nums as a key then give it 1 as its value
+then we create an else statement that basically increament the number value if the key is already there
+after that we can do is for in loop and loop over the keys
+then check the keys value we select the highest one
+return that
+*/
+
+// const majorityElement = function (nums) {
+//   const object = {};
+//   for (let i = 0; i < nums.length; i++) {
+//     !object[nums[i]] ? object[nums[i]] = 1 : object[nums[i]]++;
+//   }
+//   const array = Object.values(object);
+//   const maxNumber = Math.max(...array);
+//   for (const key in object) {
+//     if (object[key] === maxNumber) {
+//       return key;
+//     }
+//   }
+// };
+
+// console.log(majorityElement([3, 2, 3]));
