@@ -437,3 +437,28 @@ return that
 // };
 
 // console.log(majorityElement([3, 2, 3]));
+
+// var threeSum = function (nums) {
+//   const set = new Set();
+//   const sortedArray = nums.sort((a, b) => a - b);
+
+//   for (let i = 0; i < sortedArray.length; i++) {
+//     let secondPointer = i + 1;
+//     let thirdPointer = sortedArray.length - 1;
+
+//     while (secondPointer < thirdPointer) {
+//       let sum = sortedArray[i] + sortedArray[secondPointer] + sortedArray[thirdPointer];
+//       if (sum === 0) {
+//         set.add([sortedArray[i], sortedArray[secondPointer], sortedArray[thirdPointer]].join(','));
+//         thirdPointer--;
+//         secondPointer++;
+//       } else if (sum < 0) {
+//         secondPointer++;
+//       } else {
+//         thirdPointer--;
+//       }
+//     }
+//   }
+
+//   return Array.from(set, item => item.split(',').map(Number));
+// };
