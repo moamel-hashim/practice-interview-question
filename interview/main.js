@@ -462,3 +462,22 @@ return that
 
 //   return Array.from(set, item => item.split(',').map(Number));
 // };
+
+// var numOfSubarrays = function (arr, k, threshold) {
+//   let answer = 0;
+//   let windowSum = 0;
+//   let windowStart = 0;
+//   for (let windowEnd = 0; windowEnd < arr.length; windowEnd++) {
+//     windowSum += arr[windowEnd];
+//     if (windowEnd >= k) {
+//       windowSum -= arr[windowStart];
+//       windowStart++;
+//     }
+//     if (windowEnd - windowStart + 1 === k && windowSum / k >= threshold) {
+//       answer++;
+//     }
+//   }
+//   return answer;
+// };
+
+// console.log(numOfSubarrays([1, 2, 2, 3, 4, 5, 10], 3, 4));
